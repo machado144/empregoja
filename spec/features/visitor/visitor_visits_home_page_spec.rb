@@ -20,7 +20,9 @@ feature 'Visitor visits Emprego Ja home page' do
                company: company,
                description: 'QA Junior com ao menos um projeto',
                location: 'São Paulo')
+
     visit root_path
+
     expect(page).to have_content('Vaga de Dev')
     expect(page).to have_content('Campus Code')
     expect(page).to have_content('São Paulo')
