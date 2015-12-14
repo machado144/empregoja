@@ -12,7 +12,6 @@ class JobsController < ApplicationController
     @job = Job.create(job_params)
     redirect_to @job
   end
-
   private
 
   def job_params
