@@ -58,6 +58,7 @@ feature 'User creates a new job' do
   end
 
   scenario 'invalid data' do
+
     visit new_job_path
 
     click_on 'Criar Vaga'

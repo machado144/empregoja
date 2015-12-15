@@ -4,8 +4,12 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @company = Company.create(company_params)
-    redirect_to @company
+    @company = Company.new(company_params)
+    if @company.save
+      redirect_to @company
+    else
+      render :new
+    end
   end
 
   def show
