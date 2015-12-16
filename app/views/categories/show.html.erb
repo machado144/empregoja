@@ -1,0 +1,5 @@
+<h1>Categorias</h1>
+<%= @category.name %>
+<% @category.jobs.each do |job| %>
+<%= render job %>
+<% end %>
