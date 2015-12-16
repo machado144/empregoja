@@ -7,6 +7,7 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @categories = Category.all
   end
 
   def create
@@ -14,6 +15,7 @@ class JobsController < ApplicationController
     if @job.save
       redirect_to @job
     else
+      @categories = Category.all
       render :new
     end
   end
@@ -26,7 +28,7 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job)
-      .permit(:title, :location, :category, :description, :featured,
+      .permit(:title, :location, :category_id, :description, :featured,
              :company_id)
   end
 end
