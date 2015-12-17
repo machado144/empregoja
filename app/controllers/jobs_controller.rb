@@ -25,6 +25,7 @@ class JobsController < ApplicationController
     if @job.save
       redirect_to @job
     else
+      flash.now[:warning] = "Warning! All fields are mandatory."
       render :new
     end
   end
