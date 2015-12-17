@@ -1,0 +1,12 @@
+<h1>h1n1</h1>
+<%= form_for @company do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :location %>
+<%= f.text_field :location %>
+<%= f.label :mail %>
+<%= f.text_field :mail %>
+<%= f.label :phone %>
+<%= f.text_field :phone %>
+<%= f.submit 'Atualizar Empresa' %>
+<% end %>
