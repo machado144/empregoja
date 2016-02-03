@@ -2,10 +2,9 @@ require 'rails_helper'
 
 feature 'Visitor should see expired job' do
   scenario 'unsuccessfully' do
-
     user = create_user
     login_as user
-    
+
     travel_to 90.days.ago do
       company = Company.create(name:     'Campus Code',
                                location: 'São Paulo',
@@ -26,10 +25,9 @@ feature 'Visitor should see expired job' do
   end
 
   scenario 'by direct link' do
-
     user = create_user
     login_as user
-    
+
     job = nil
 
     travel_to 90.days.ago do

@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-    before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def show
     @category = Category.find(params[:id])
@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
     if user_signed_in?
       @category = Category.new
     else
-      redirect_to new_user_session_path      
+      redirect_to new_user_session_path
     end
   end
 

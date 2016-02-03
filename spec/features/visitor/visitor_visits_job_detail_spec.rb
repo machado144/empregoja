@@ -2,10 +2,9 @@ require 'rails_helper'
 
 feature 'Visitor visits job details' do
   scenario 'successfully' do
-
     user = create_user
     login_as user
-    
+
     company = Company.create(name: 'Campus Code',
                              location: 'São Paulo',
                              mail: 'contato@campus.com.br',

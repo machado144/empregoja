@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 feature 'User login in application' do
-
   scenario 'successfully' do
-
     user = User.create(email: 'marianagodoy@globo.com', password: 'justme123')
 
     visit root_path
@@ -31,6 +29,5 @@ feature 'User login in application' do
     click_on 'Login'
 
     expect(page).not_to have_link 'Entrar'
-
   end
 end

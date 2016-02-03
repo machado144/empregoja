@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'User logout in application' do
-
   scenario 'successfully' do
     user = User.create(email: 'marianagodoy@globo.com', password: 'justme123')
 
@@ -21,5 +20,4 @@ feature 'User logout in application' do
     expect(page).not_to have_content 'Olá marianagodoy@globo.com'
     expect(page).not_to have_link 'Sair'
   end
-
 end

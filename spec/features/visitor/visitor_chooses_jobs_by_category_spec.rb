@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'Visitor chooses jobs by category' do
   scenario 'successfully' do
-
     user = create_user
     login_as user
 
@@ -42,7 +41,6 @@ feature 'Visitor chooses jobs by category' do
   end
 
   scenario 'and does not see other category jobs' do
-
     user = create_user
     login_as user
 
