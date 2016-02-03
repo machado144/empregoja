@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'User edits a company' do
   scenario 'successfully' do
+
+    user = create_user
+    login_as user
+    
     company = Company.create(name:     'Campus Code',
                              location: 'São Paulo',
                              phone:    '2369-3476',

@@ -1,7 +1,19 @@
 require 'rails_helper'
 
 feature 'User creates a new job' do
+
+  scenario 'must be currently signed in' do
+
+    visit new_job_path
+
+    expect(page).to have_current_path(new_user_session_path)
+  end
+
   scenario 'successfully' do
+
+    user = create_user
+    login_as user
+
     company = Company.create(name: 'Campus Code',
                              location: 'São Paulo',
                              mail: 'contato@campus.com.br',
@@ -32,6 +44,10 @@ feature 'User creates a new job' do
   end
 
   scenario 'featured job' do
+
+    user = create_user
+    login_as user
+
     company = Company.create(name: 'Campus Code',
                              location: 'São Paulo',
                              mail: 'contato@campus.com.br',
@@ -62,6 +78,10 @@ feature 'User creates a new job' do
   end
 
   scenario 'invalid data' do
+
+    user = create_user
+    login_as user
+    
     visit new_job_path
 
     click_on 'Criar Vaga'

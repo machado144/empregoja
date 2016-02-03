@@ -1,7 +1,13 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:edit, :update, :show]
+  before_action :authenticate_user!
+
   def new
-    @company = Company.new
+    if user_signed_in?
+      @company = Company.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create

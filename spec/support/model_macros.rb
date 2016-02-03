@@ -18,4 +18,8 @@ module ModelsMacros
                         location: 'São Paulo - SP',
                         category: category)
   end
+
+  def create_user
+    User.create(email: 'marianagodoy@globo.com', password: 'justme123')
+  end
 end

@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'Visitor choose jobs by company' do
   scenario 'successfully' do
+
+    user = create_user
+    login_as user
+    
     company = Company.create(name:     'Campus Code',
                              location: 'São Paulo',
                              mail:     'contato@campuscode.com.br',
@@ -26,6 +30,10 @@ feature 'Visitor choose jobs by company' do
   end
 
   scenario 'and does not see other company jobs' do
+
+    user = create_user
+    login_as user
+    
     company = Company.create(name:     'Campus Code',
                              location: 'São Paulo',
                              mail:     'contato@campuscode.com.br',

@@ -1,12 +1,17 @@
 class JobsController < ApplicationController
   # before_action :set_collections, only: [:new, :create, :edit]
   before_action :set_job, only: [:edit, :show, :update]
+  before_action :authenticate_user!
 
   def show
   end
 
   def new
-    @job = Job.new
+    if user_signed_in?
+      @job = Job.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def edit

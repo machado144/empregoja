@@ -7,14 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
   <% if user_signed_in? %>
-    <p>Olá <%= current_user %></p>
+    <p>Olá <%= current_user.email %></p>
+    <%= link_to 'Sair', destroy_user_session_path, method: 'delete' %>
     <% else %>
     <%= link_to 'Entrar', new_user_session_path %>
   <% end %>
 <div class="container">
 <h1>Emprego Já</h1>
+
 
 
 <%= yield %>
