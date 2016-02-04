@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
 gem 'rubocop', require: false
 gem 'devise'
+gem "paperclip", "~> 4.3"
 
 group :development, :test do
   gem 'pry-rails'
